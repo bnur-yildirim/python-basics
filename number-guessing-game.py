@@ -1,23 +1,33 @@
 import random
 
-def getNum():
-    num = int(input("Enter a number(1-100): "))
-    while num < 1 and num > 100:
-        num = int(input("Number should be betwenn 1-100: ")) 
-    return num
+#constant variables
+MIN_NUM = 1
+MAX_NUM = 100
 
-number = random.randint(1,100)
+#input a number from the user
+def get_num():
+    while True:
+        num = int(input(f"Enter a number ({MIN_NUM}-{MAX_NUM}): ")) 
+        if MIN_NUM <= num and MAX_NUM >= num:
+            return num
+        else:
+            print(f"Number should be between {MIN_NUM}-{MAX_NUM}.")
 
-userNum = 0
-score = 0
+print(f"""Welcome to the guessing number game.
+You will try to guess a random number between{MIN_NUM} and {MAX_NUM}.
+The program will keep track of the number of tries you make and display it as score.
+Good luck!!\n""")
+
+number = random.randint(MIN_NUM, MAX_NUM)
+userNum = get_num()
+score = 1
+
 while userNum != number:
-    userNum = getNum()
-    score+=1
-
     if userNum > number:
         print("Too high.\n")
     elif userNum < number:
         print("Too low.\n")
-    else:
-        print("You Found the number!")
-        print("Your score is: ", score) 
+    userNum = get_num()
+    score+=1
+
+print(f"You found the number!\nYour score is {score}\n")
