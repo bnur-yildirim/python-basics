@@ -3,13 +3,13 @@ import random
 print("""Welcome to the rock paper and scissors game!
 Type r for rock, s for scissors, p for paper and y for quit.""")
 
-list = ["r", "p", "s"]
+choices = ["r", "p", "s"]
 userScore = 0
 compScore = 0
 userChoice = "n"
 
 while userChoice != "y":
-    compChoice = random.choice(list)
+    compChoice = random.choice(choices)
     
     userChoice = input("Type (r/p/s) or y to quit: ").lower()
     
