@@ -1,8 +1,10 @@
 """ This is a program for online shopping website. 
     Items to sold are kept in a dictionary named inventory.
+    Based on the customers shopping list, inventory stocks are checked.
+    And then the total bill is calculated.
+    Program exits with displaying the new inventory with upgraded stock
+    values after the customers purchase.    
 """
-# ADD A FUNCTION WHERE USER GETS TO CREATE THEIR OWN SHOPPING LIST
-
 def main():
     #inventory of the online shop
     # inventory = {"item name":[price, stock, "section the item belongs"]}
